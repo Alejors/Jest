@@ -8,7 +8,7 @@ test('suma 14 + 9 es 23', () => {
     expect(total).toBe(23);
 });
 
-test("One euro should be 1.206 dollars", function(){
+test("One euro should be 1.206 dollars", function () {
     //import the function from app.js
     const { fromEuroToDollar } = require('./app.js')
 
@@ -16,27 +16,38 @@ test("One euro should be 1.206 dollars", function(){
     const dollars = fromEuroToDollar(3.5)
 
     // if 1 euro are 1.206 dollars, then 3.5 euros should be (3.5 * 1.2)
-    const expected = 3.5 * 1.2; 
-    
+    const expected = 3.5 * 1.2;
+
     // this is the comparison for the unit test
-     expect(fromEuroToDollar(3.5)).toBe(4.2); //1 euro are 1.2 dolares, then 3.5 euros should be = (3.5 * 1.2)
+    expect(fromEuroToDollar(3.5)).toBe(4.2); //1 euro are 1.2 dolares, then 3.5 euros should be = (3.5 * 1.2)
 })
 
 //TEST PARA DOLAR A YEN
-test("Un dolar debería ser 106,5833 Yen", function(){
+test("Un dolar debería ser 106,5833 Yen", function () {
     const { fromDollarToYen } = require('./app.js')
 
     const Yens = fromDollarToYen(3)
-    const expected = 3 * 106.58333; 
-    
-     expect(fromDollarToYen(3)).toBe(319.74999);
+    const expected = 3 * 106.58333;
+
+    // const expected = 3 / 1.2 * 127.9; 
+
+    //  expect(fromDollarToYen(3)).toBe(319.75);
+
+    expect(fromDollarToYen(3)).toBe(319.74999);
 })
+
 //TEST PARA YEN A LIBRA
-test("Un Yen debería ser 0.006254887 libras", function(){
+test("Un Yen debería ser 0.006254887 libras", function () {
     const { fromYenToPound } = require('./app.js')
 
     const pounds = fromYenToPound(15000)
-    const expected = (15000 * .006254887); 
-    
-     expect(fromYenToPound(15000)).toBe(93.823305);
+    const expected = (15000 * .006254887);
+
+    //  const expected = 15000 / 127.9 * 0.8; 
+
+    //  expect(fromYenToPound(15000)).toBe(93.823299453);
+
+    expect(fromYenToPound(15000)).toBe(93.823305);
+
+
 })
